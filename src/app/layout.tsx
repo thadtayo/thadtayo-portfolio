@@ -18,23 +18,21 @@ export default function RootLayout({
       <body className={inter.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
 }
 
-const Navbar = () => {
+const Socials = () => {
   return (
-    <nav className="py-4 px-12 bg-black flex flex-row my-auto items-center justify-between align-middle">
-      <span className="text-xl">Thad Tayo</span>
-      <span className="border border-[#EDEFF1]/[.15] py-4 px-8 flex flex-row gap-4 rounded-full">
-        <span>About</span>
-        <span>Experiences</span>
-        <span>Projects</span>
-        <span>Blog</span>
-      </span>
-      <span className="flex gap-4 items-center">
-        <span>
+    <span className="flex gap-4 items-center">
+      <span>
+        <a
+          href="https://github.com/thadtayo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             width="25"
             height="25"
@@ -47,8 +45,14 @@ const Navbar = () => {
               fill="#F5F5F5"
             />
           </svg>
-        </span>
-        <span>
+        </a>
+      </span>
+      <span>
+        <a
+          href="https://twitter.com/thadtayo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             width="25"
             height="21"
@@ -61,8 +65,14 @@ const Navbar = () => {
               fill="white"
             />
           </svg>
-        </span>
-        <span>
+        </a>
+      </span>
+      <span>
+        <a
+          href="https://linkedin.com/in/thad-joshua-tayo"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg
             width="22"
             height="24"
@@ -75,8 +85,30 @@ const Navbar = () => {
               fill="white"
             />
           </svg>
-        </span>
+        </a>
       </span>
+    </span>
+  );
+};
+const Navbar = () => {
+  return (
+    <nav className="py-4 px-12 bg-black flex flex-row my-auto items-center justify-between align-middle">
+      <span className="text-xl">Thad Tayo</span>
+      <span className="border border-[#EDEFF1]/[.10] py-4 px-8 flex flex-row gap-2 rounded-full">
+        <span>About</span>
+        <span>Experiences</span>
+        <span>Projects</span>
+        <span>Blog</span>
+      </span>
+      <Socials />
     </nav>
+  );
+};
+
+const Footer = () => {
+  return (
+    <div className="py-8 flex flex-col gap-4 justify-center items-center">
+      <Socials />© Thad Tayo {new Date().getFullYear()}
+    </div>
   );
 };
