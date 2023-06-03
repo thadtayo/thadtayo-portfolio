@@ -95,10 +95,18 @@ const Navbar = () => {
     <nav className="py-4 px-12 bg-black flex flex-row my-auto items-center justify-between align-middle">
       <span className="text-xl">Thad Tayo</span>
       <span className="border border-[#EDEFF1]/[.10] py-4 px-8 flex flex-row gap-2 rounded-full">
-        <span>About</span>
-        <span>Experiences</span>
-        <span>Projects</span>
-        <span>Blog</span>
+        <span>
+          <a href="#">About</a>
+        </span>
+        <span>
+          <a href="#"> Experiences</a>
+        </span>
+        <span>
+          <a href="#">Projects</a>
+        </span>
+        <span>
+          <a href="#">Blog</a>
+        </span>
       </span>
       <Socials />
     </nav>
