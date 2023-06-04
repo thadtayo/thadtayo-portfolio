@@ -3,7 +3,7 @@ import Section from "./Section";
 const Hobbies = () => {
   return (
     <div className="h-[20vh] my-12">
-      <Section title="100. Hobbies">
+      <Section title="100. Hobbies" id="hobbies">
         <div className="flex flex-col items-center gap-4">
           <p className="max-w-xl">
             Outside of the tech world, here’s a non-comprehensive list of things

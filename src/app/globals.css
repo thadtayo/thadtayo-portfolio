@@ -21,4 +21,5 @@ body {
   color: white;
   background: #1b1919;
   letter-spacing: 0.13em;
+  scroll-behavior: smooth;
 }

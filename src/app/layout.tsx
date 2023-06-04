@@ -1,3 +1,5 @@
+"use client";
+import { SetStateAction, useState } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -90,25 +92,81 @@ const Socials = () => {
     </span>
   );
 };
-const Navbar = () => {
+
+const MenuIcon = ({
+  onClick,
+  className,
+}: {
+  onClick: React.Dispatch<SetStateAction<boolean>>;
+  className?: string;
+}) => {
   return (
-    <nav className="py-4 px-12 bg-black flex flex-row my-auto items-center justify-between align-middle">
-      <span className="text-xl">Thad Tayo</span>
-      <span className="border border-[#EDEFF1]/[.10] py-4 px-8 flex flex-row gap-2 rounded-full">
-        <span>
-          <a href="#">About</a>
-        </span>
-        <span>
-          <a href="#"> Experiences</a>
-        </span>
-        <span>
-          <a href="#">Projects</a>
-        </span>
-        <span>
-          <a href="#">Blog</a>
-        </span>
+    <span
+      className={`md:hidden ${className}`}
+      onClick={() => onClick((prev) => !prev)}
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-10 w-10 stroke-white"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h12M4 18h08"
+        ></path>
+      </svg>
+    </span>
+  );
+};
+const SectionLinks = () => {
+  return (
+    <>
+      <span>
+        <a href="#hero">About</a>
       </span>
-      <Socials />
+      <span>
+        <a href="#experiences"> Experiences</a>
+      </span>
+      <span>
+        <a href="#projects">Projects</a>
+      </span>
+      <span>
+        <a href="#blog">Blog</a>
+      </span>
+    </>
+  );
+};
+const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  return (
+    <nav className="py-4 px-12 bg-black flex flex-row justify-between items-center relative">
+      <span className="text-xl ">Thad Tayo</span>
+      <MenuIcon onClick={() => setOpenMenu((prev) => !prev)} />
+      {openMenu && (
+        <div className="absolute top-0 right-0 min-h-screen min-w-full bg-slate-800 z-50 p-8">
+          <div>
+            <div className="flex flex-col">
+              <MenuIcon
+                onClick={() => setOpenMenu((prev) => !prev)}
+                className="self-end"
+              />
+            </div>
+            <div className="flex flex-col items-center justify-center gap-12 min-h-screen">
+              <SectionLinks />
+              <Socials />
+            </div>
+          </div>
+        </div>
+      )}
+      <span className="border border-[#EDEFF1]/[.10] py-4 px-8 md:flex flex-row gap-2 rounded-full hidden">
+        <SectionLinks />
+      </span>
+      <span className="hidden md:block">
+        <Socials />
+      </span>
     </nav>
   );
 };

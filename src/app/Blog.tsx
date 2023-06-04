@@ -4,7 +4,7 @@ import Section from "./Section";
 const Blog = () => {
   return (
     <div className="h-[20vh] my-12">
-      <Section title="11. Blog">
+      <Section title="11. Blog" id="blog">
         <div className="flex flex-col items-center gap-4">
           <p className="max-w-xl">
             I love talking, even when no one’s listening (just ask my cats).

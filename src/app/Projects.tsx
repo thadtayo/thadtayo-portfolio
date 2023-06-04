@@ -5,7 +5,7 @@ import Project from "./Project";
 
 const Projects = () => {
   return (
-    <Section title="10. Projects">
+    <Section title="10. Projects" id="projects">
       <Project
         title="Bloom Bookings"
         img={bloombookings}

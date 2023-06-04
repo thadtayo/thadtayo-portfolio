@@ -3,8 +3,8 @@ import Section from "./Section";
 
 const Hero = () => {
   return (
-    <Section title="00. Introductions">
-      <div className="h-[50vh] flex flex-col justify-around items-center text-center gap-8 my-12">
+    <Section title="00. Introductions" id="hero">
+      <div className="min-h-[50vh] flex flex-col justify-around items-center text-center gap-8 my-12">
         <div className="flex flex-col gap-4">
           <h1 className="text-7xl">Thad Tayo</h1>
           <h2 className="text-4xl">

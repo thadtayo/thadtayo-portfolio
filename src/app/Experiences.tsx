@@ -3,7 +3,7 @@ import Section from "./Section";
 
 const Experiences = () => {
   return (
-    <Section title="01. Experience">
+    <Section title="01. Experience" id="experiences">
       <Experience
         title="Senior Software Engineer"
         location="Capital One"

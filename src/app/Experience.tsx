@@ -18,9 +18,9 @@ const Experience: React.FC<PropsWithChildren<ExperienceProps>> = ({
 }) => {
   if (reverse) {
     return (
-      <div className="my-36 flex flex-row gap-8">
-        <div className="w-1/2">{children}</div>
-        <div className=" flex flex-col gap-4 w-1/2">
+      <div className="my-36 flex flex-col md:flex-row gap-8">
+        <div className="order-last md:order-none md:w-1/2">{children}</div>
+        <div className=" flex flex-col gap-4 md:w-1/2">
           <div className="">
             <p className="text-2xl">
               {title} • {location}
@@ -35,8 +35,8 @@ const Experience: React.FC<PropsWithChildren<ExperienceProps>> = ({
     );
   }
   return (
-    <div className="my-12 flex flex-row gap-8">
-      <div className=" flex flex-col gap-4 w-1/2">
+    <div className="my-12 flex flex-col md:flex-row gap-8">
+      <div className=" flex flex-col gap-4 md:w-1/2">
         <div className="">
           <p className="text-2xl">
             {title} • {location}
@@ -47,7 +47,7 @@ const Experience: React.FC<PropsWithChildren<ExperienceProps>> = ({
           <Chips texts={skills} />
         </div>
       </div>
-      <div className="w-1/2">{children}</div>
+      <div className="md:w-1/2">{children}</div>
     </div>
   );
 };
