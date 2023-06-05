@@ -35,7 +35,7 @@ const Hero = () => {
             SaaS startups, consumer apps, video games, and more.
           </p>
         </div>
-        <Button text="See Full Resume" href="#" />
+        <Button text="See Full Resume" href="/resume.pdf" />
       </div>
     </Section>
   );

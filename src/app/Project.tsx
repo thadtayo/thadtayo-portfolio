@@ -11,16 +11,13 @@ const Project: React.FC<
   }>
 > = ({ title, img, alt, link, children }) => {
   return (
-    <div className="text-center">
-      <h1>{title}</h1>
+    <div className="flex flex-col gap-4 justify-center items-center">
+      <h4 className="text-4xl">{title}</h4>
       {/* TODO: fix responsiveness here */}
-      <Image
-        src={img}
-        alt={alt}
-        style={{ maxWidth: "100%", height: "auto" }}
-        className="mx-auto"
-      />
-      {children}
+      <div className="max-w-[90vw] md:max-w-[50vw] flex items-center justify-center">
+        <Image src={img} alt={alt} className="mx-auto self-center" />
+      </div>
+      <div className="max-w-2xl">{children}</div>
       <Button text="Check It Out" href={link} />
     </div>
   );

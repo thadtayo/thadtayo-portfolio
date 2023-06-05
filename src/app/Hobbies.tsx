@@ -2,9 +2,9 @@ import Section from "./Section";
 
 const Hobbies = () => {
   return (
-    <div className="h-[20vh] my-12">
+    <div className="my-12">
       <Section title="100. Hobbies" id="hobbies">
-        <div className="flex flex-col items-center gap-4">
+        <div className="flex flex-col items-center gap-4 text-lg">
           <p className="max-w-xl">
             Outside of the tech world, here’s a non-comprehensive list of things
             I enjoy:

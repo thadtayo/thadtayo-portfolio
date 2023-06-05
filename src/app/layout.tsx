@@ -121,29 +121,49 @@ const MenuIcon = ({
     </span>
   );
 };
-const SectionLinks = () => {
+const SectionLinks = ({
+  setOpenMenu,
+}: {
+  setOpenMenu: React.Dispatch<SetStateAction<boolean>>;
+}) => {
   return (
     <>
       <span>
-        <a href="#hero">About</a>
+        <a href="#hero" onClick={() => setOpenMenu(false)}>
+          About
+        </a>
       </span>
       <span>
-        <a href="#experiences"> Experiences</a>
+        <a href="#experiences" onClick={() => setOpenMenu(false)}>
+          {" "}
+          Experiences
+        </a>
       </span>
       <span>
-        <a href="#projects">Projects</a>
+        <a href="#projects" onClick={() => setOpenMenu(false)}>
+          Projects
+        </a>
       </span>
       <span>
-        <a href="#blog">Blog</a>
+        <a href="#blog" onClick={() => setOpenMenu(false)}>
+          Blog
+        </a>
       </span>
     </>
   );
 };
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+
+  const handleClick = () => {
+    setOpenMenu((prev) => !prev);
+  };
+
   return (
     <nav className="py-4 px-12 bg-black flex flex-row justify-between items-center relative">
-      <span className="text-xl ">Thad Tayo</span>
+      <span className="text-xl">
+        <a href="#top">Thad Tayo</a>
+      </span>
       <MenuIcon onClick={() => setOpenMenu((prev) => !prev)} />
       {openMenu && (
         <div className="absolute top-0 right-0 min-h-screen min-w-full bg-slate-800 z-50 p-8">
@@ -155,14 +175,14 @@ const Navbar = () => {
               />
             </div>
             <div className="flex flex-col items-center justify-center gap-12 min-h-screen">
-              <SectionLinks />
+              <SectionLinks setOpenMenu={setOpenMenu} />
               <Socials />
             </div>
           </div>
         </div>
       )}
       <span className="border border-[#EDEFF1]/[.10] py-4 px-8 md:flex flex-row gap-2 rounded-full hidden">
-        <SectionLinks />
+        <SectionLinks setOpenMenu={setOpenMenu} />
       </span>
       <span className="hidden md:block">
         <Socials />

@@ -7,7 +7,7 @@ const Section: React.FC<PropsWithChildren<{ title: string; id: string }>> = ({
   id,
 }) => {
   return (
-    <div className="relative px-16" id={id}>
+    <div className="relative px-12 md:px-16" id={id}>
       <SectionHeader text={title} />
       {children}
     </div>
